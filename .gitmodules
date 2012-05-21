@@ -13,3 +13,6 @@
 [submodule "local/camtasia_relay"]
 	path = local/camtasia_relay
 	url = git://github.com/TechSmith/Moodle-Camtasia_Relay-Plugin.git
+[submodule "blocks/dndupload"]
+	path = blocks/dndupload
+	url = git://github.com/davosmith/moodle-block_dndupload.git
