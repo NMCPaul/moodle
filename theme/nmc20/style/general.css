@@ -810,6 +810,9 @@ h3.sectionname {
   padding-top: 15px;
   width: 100%;
 }
+    #copyright p {
+        font-size: 10px;
+    }
 
 .mod_book .book_content {
   background: #FFF;
