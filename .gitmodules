@@ -7,3 +7,6 @@
 [submodule "blocks/quickfindlist"]
 	path = blocks/quickfindlist
 	url = git://github.com/marxjohnson/moodle-block_quickfindlist.git
+[submodule "blocks/admin_presets"]
+	path = blocks/admin_presets
+	url = git://github.com/dmonllao/moodle-block_admin_presets.git
