@@ -811,7 +811,10 @@ h3.sectionname {
   width: 100%;
 }
     #copyright p {
+        display: block;
         font-size: 10px;
+        margin: 0 auto;
+        width: 70%;
     }
 
 .mod_book .book_content {
