@@ -1073,3 +1073,6 @@ legend {
       background-color: #F6F0CE;
       border-bottom: 1px solid #E4B150;
     }
+.pagelayout-report .no-overflow {
+    overflow: auto;
+}

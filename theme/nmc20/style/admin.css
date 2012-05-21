@@ -37,6 +37,7 @@
   border-color:#C8C9C7;
   background-color: transparent;
   border-width: 0px;*/
+  overflow: auto;
 }
 
 #admin-mnet-index table td,
