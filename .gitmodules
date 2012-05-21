@@ -1,3 +1,9 @@
 [submodule "blocks/quickmail"]
 	path = blocks/quickmail
 	url = git://github.com/lsuits/quickmail.git
+[submodule "blocks/quickcourselist"]
+	path = blocks/quickcourselist
+	url = git://github.com/marxjohnson/moodle-block_quickcourselist.git
+[submodule "blocks/quickfindlist"]
+	path = blocks/quickfindlist
+	url = git://github.com/marxjohnson/moodle-block_quickfindlist.git
