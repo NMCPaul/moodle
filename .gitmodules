@@ -10,3 +10,6 @@
 [submodule "blocks/admin_presets"]
 	path = blocks/admin_presets
 	url = git://github.com/dmonllao/moodle-block_admin_presets.git
+[submodule "local/camtasia_relay"]
+	path = local/camtasia_relay
+	url = git://github.com/TechSmith/Moodle-Camtasia_Relay-Plugin.git
