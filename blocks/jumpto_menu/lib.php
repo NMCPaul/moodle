@@ -3,7 +3,7 @@
     {
      global $COURSE, $PAGE, $CFG;
      $target="window";
-     if ($CFG->framename=="_top")
+     if (isset($CFG->framename) && $CFG->framename=="_top")
          $target="window.parent";
 
      if ($PAGE->cm)
@@ -200,7 +200,7 @@
            " //<!--\n".
            "function setTarget(w)\n".
            "{\n".
-           " w.target=\"".$CFG->framename."\";\n".
+           //" w.target=\"".$CFG->framename."\";\n".
            "}\n\n".
            "function jumpTo()\n".
            "{\n".
@@ -279,7 +279,7 @@
 
         $output = '<form action="'.$CFG->wwwroot.'/blocks/jumpto_menu/jumpto.php"'.
                         ' method="get" '.
-                        ' target="'.$CFG->framename.'" '.
+                        //' target="'.$CFG->framename.'" '.
                         ' id="'.$formid.'"'.
                         ' class="popupform">';
         if ($help) {
