@@ -7,6 +7,9 @@
   width:100%;*/
   width: inherit;
 }
+  h2.headingblock.outline {
+    display: none;
+  }
   .coursebox .info {
     background-color: #F2E9BC;
     /*width:100%;*/
