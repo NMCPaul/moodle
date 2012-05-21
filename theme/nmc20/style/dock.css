@@ -17,6 +17,9 @@ body.has_dock {
     letter-spacing:2;
   }
 
+#dockeditempanel {
+  min-width: 300px;
+}
 #dockeditempanel .dockeditempanel_content {
   border: 1px solid #E4B150;
 }
