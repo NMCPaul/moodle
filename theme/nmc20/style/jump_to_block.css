@@ -1,0 +1,6 @@
+.jumpto_menu ul li form fieldset, .jumpto_menu ul li form div select {
+    width: 100%;
+}
+.jumpto_menu ul li form, .jumpto_menu ul li {
+    margin-left: 0;
+}

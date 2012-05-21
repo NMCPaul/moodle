@@ -1,0 +1,27 @@
+#gm-message-popup {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+  #gm-message-popup div {
+    background-color: rgb(255,255,255);
+    /*background-color: rgba(255,255,255,0.5);*/
+    border: 1px solid #E4B150;
+    margin: 0 auto;
+    padding: 0;
+    width: 75%;
+  }
+  #gm-message-popup a.gm-close {
+    float: right;
+  }
+  #gm-message-popup #gm-message-inner {
+    background-color: rgb(255,255,255);
+    /*background-color: rgba(255,255,255,0.5);*/
+    border: none;
+    margin-bottom: 15px;
+    padding: 15px 0 0 0;
+    width: 90%;
+  }
+    #gm-message-popup #gm-message-inner p {
+      margin: 0;
+    }

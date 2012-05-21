@@ -1,0 +1,63 @@
+/** Admin **/
+.box.adminwarning {text-align:center;border:1px solid #C8C9C7;background-color:#E3E3E3;margin-bottom:1em;padding:10px 10%;}
+.box.copyright {text-align:center;font-size:90%;padding:10px 10%;}
+#adminsettings fieldset {
+  border: 1px solid #E4B150;
+  background-color: #FFFFFF;
+}
+#adminsettings fieldset .generalbox {margin:1em 0.5em;border-color:#C8C9C7;}
+#adminsettings .form-buttons {margin-left:13em;}
+
+.admin .plugincompattable .r1 .cell {background-color:#FFF;}
+
+.admin .generaltable {
+}
+  .admin .generaltable .cell {
+    background-color: transparent;
+    border: 1px solid #E4B150;
+    border-collapse: collapse;
+  }
+  .admin .generaltable tbody {
+  }
+  .admin .generaltable tr.r0 {
+    background-color: #FFFFFF;
+  }
+  .admin .generaltable tr.r1 {
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.60);
+  }
+    .admin .generaltable tr.plugintypeheader th {
+      background-color: #F6F0CE;
+      color: #1E4428;
+    }
+    .admin .generaltable tr td {
+    }
+.admin .generalbox {
+  /*background-color:#EEE;
+  border-color:#C8C9C7;
+  background-color: transparent;
+  border-width: 0px;*/
+}
+
+#admin-mnet-index table td,
+
+.block_settings .content #adminsearchquery {
+  width: 95%;
+}
+.admin table .singleselect .menumoveto, .admin table .singleselect {
+  width: 100%;
+}
+  .admin table .singleselect .menumoveto option {
+  }
+.adminonly {
+  color: red !important;
+  text-shadow: 0 0 0.2em black, 0 0 0.2em #000;
+}
+.admin table.editcourse tr {
+}
+.admin table.editcourse tr.header th.header {
+  margin-bottom: 5px;
+}
+.admin table.editcourse tr td {
+  padding: 0;
+}

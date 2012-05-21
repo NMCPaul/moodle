@@ -1,0 +1,28 @@
+body.has_dock {
+  margin:0 auto;
+}
+  body.has_dock #nmclogo {
+    margin: 0 auto;
+  }
+#dock, #dock .dockedtitle {
+  border-color: #E4B150;
+  background:rgb(255,255,255);
+  background:rgba(255,255,255,0.8);
+}
+#dock .dockedtitle h2 {
+  color: #D54F21;
+  font-weight: normal;
+}
+  #dock .dockedtitle h2 title {
+    letter-spacing:2;
+  }
+
+#dockeditempanel .dockeditempanel_content {
+  border: 1px solid #E4B150;
+}
+  #dockeditempanel .dockeditempanel_hd {
+    border-bottom: 1px solid #D54F21;
+  }
+  #dockeditempanel .dockeditempanel_hd h2 {
+    color: #D54F21;
+  }

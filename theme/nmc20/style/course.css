@@ -1,0 +1,86 @@
+.coursebox {
+  background-color: #F2E9BC;
+  border: 1px solid #E4B150;
+  margin:10px 6px;
+  overflow:hidden;
+  /*padding-bottom:10px;
+  width:100%;*/
+  width: inherit;
+}
+  .coursebox .info {
+    background-color: #F2E9BC;
+    /*width:100%;*/
+    float:left;
+  }
+    .coursebox .info ul.teachers {
+      background-color: #FFFFFF;
+      border: 1px solid #E4B140;
+      margin: 13px;
+      padding: 5px;
+    }
+  .coursebox .summary {
+    /*width:60%;
+    float:right;*/
+    margin: 13px;
+  }
+  .coursebox h3 {
+    /*background-color: #F2E9BC;*/
+    background: url("nmc20/pix/bkg-header.gif") repeat-x scroll 0 0 #D7D7DB;
+    border-bottom: 1px solid #E4B150;
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+  }
+
+/*.course-content ul {margin:0;}*/
+.course-content ul.topics li.section, .course-content ul.weeks li.section {
+  background-color: #FFFFFF;
+  /*padding: 10px 0;*/
+  margin-bottom: 10px;
+}
+.course-content .headingblock.outline {margin-top:0;}
+.course-content .section.main {
+  background-color: #FFFFFF;
+  border: 1px solid #E4B150;
+  margin-bottom: 10px;
+}
+.course-content .section.main.hidden {border-style :dashed;}
+.course-content .section.main .left.side {
+  float: left;
+  padding: 10px 0 0 0;
+  width: 22px;
+}
+  .course-content .section.main .left.side div {
+    display: none;
+  }
+.course-content .section.main .right.side {
+  float: right;
+  padding: 10px 0 0 0;
+  width: 22px;
+}
+  .course-content .section.main .right.side img.icon {
+    height: auto;
+  }
+.course-content ul li.section.main .content {
+  background-color: #FFFFFF;
+  margin: 0 30px 0 30px;
+  padding: 10px;
+}
+.course-content .section.main .content .section_add_menus {text-align:right;}
+.course-content ul.topics li.current, .course-content ul.weeks li.current {
+  background-color: #E4B150;
+}
+
+#course-user .section {border:1px solid #DDD;margin:0 5% 1.5em 5%;}
+
+#course-user .section h2,
+#course-user .section .content {margin:5px 1em;}
+#course-user .section table td {border:0;}
+
+.course-content table#thetopics tr.cps {
+  background-color: #F6F0CE;
+  border: 1px solid #E4B150;
+}
+  .course-content table#thetopics tr.cps td a:hover {
+    background-color: #E4B459;
+  }

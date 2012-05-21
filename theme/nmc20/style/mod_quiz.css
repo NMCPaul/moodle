@@ -1,0 +1,40 @@
+#page-mod-quiz-edit .questionbankwindow.block {
+    border: 1px solid #E4B150;
+    width: 28%;
+}
+    #page-mod-quiz-edit .questionbankwindow div.header {
+        background-color: #F6F0CE;
+    }
+
+#page-mod-quiz-edit div.quizpage .pagecontent {
+  background-color: #F6F0CE;
+  border: 1px solid #E4B150;
+}
+
+#page-mod-quiz-edit .reorder div.question div.content {
+  background-color: transparent;
+  border-bottom: 1px dashed #E4B150;
+  padding: 3px 0;
+}
+
+#page-mod-quiz-edit div.question div.content div.questioncontrols {
+  background-color: transparent;
+}
+
+#page-mod-quiz-edit div.question div.content .singlequestion .questionpreview {
+    background-color: transparent;
+}
+
+#page-mod-quiz-edit div.question div.content .questionpreview a {
+    background-color: transparent;
+}
+
+#page-mod-quiz-edit div.quizcontents {
+    background-color: white;
+    border: 1px solid #E4B150;
+    padding: 5px 0 5px 5px;
+}
+
+#page-mod-quiz-edit .questionbankwindow div.header a {
+  color: #356F9D !important;
+}
