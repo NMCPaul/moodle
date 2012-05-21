@@ -280,9 +280,9 @@ echo $OUTPUT->doctype() ?>
             <?php
               #echo $OUTPUT->login_info();
               #echo $OUTPUT->home_link();
-                //echo('<script type="text/javascript" src="'.$CFG->wwwroot.'/blocks/jumpto_menu/dropdown.js"></script>');
-                //require_once($CFG->dirroot."/blocks/jumpto_menu/lib.php");
-                //echo block_jumpto_menu_html();
+                echo('<script type="text/javascript" src="'.$CFG->wwwroot.'/blocks/jumpto_menu/dropdown.js"></script>');
+                require_once($CFG->dirroot."/blocks/jumpto_menu/lib.php");
+                echo block_jumpto_menu_html();
                 echo $OUTPUT->standard_footer_html();
             ?>
             <div class="rounded-corner bottom-left"></div>
