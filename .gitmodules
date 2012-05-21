@@ -16,3 +16,6 @@
 [submodule "blocks/dndupload"]
 	path = blocks/dndupload
 	url = git://github.com/davosmith/moodle-block_dndupload.git
+[submodule "blocks/ajax_marking"]
+	path = blocks/ajax_marking
+	url = git://github.com/mattgibson/moodle-block_ajax_marking.git
