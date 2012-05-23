@@ -87,3 +87,6 @@
   .course-content table#thetopics tr.cps td a:hover {
     background-color: #E4B459;
   }
+.path-course .userinfobox {
+  border: 1px solid #E4B150;
+}

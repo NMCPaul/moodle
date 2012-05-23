@@ -283,6 +283,20 @@ echo $OUTPUT->doctype() ?>
                 echo('<script type="text/javascript" src="'.$CFG->wwwroot.'/blocks/jumpto_menu/dropdown.js"></script>');
                 require_once($CFG->dirroot."/blocks/jumpto_menu/lib.php");
                 echo block_jumpto_menu_html();
+                /// Provide some performance info if required
+                $performanceinfo = '';
+                if ($CFG->adminonlyperfinfo and is_siteadmin($USER)) {
+                if (defined('MDL_PERF') || (!empty($CFG->perfdebug) and $CFG->perfdebug >= 7)) {
+                        $perf = get_performance_info();
+                        if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {
+                            error_log("PERF: " . $perf['txt']);
+                        }
+                        if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug >= 7) {
+                            echo($perf['html']);
+                        }
+                    }
+
+                }
                 echo $OUTPUT->standard_footer_html();
             ?>
             <div class="rounded-corner bottom-left"></div>
