@@ -19,3 +19,6 @@
 [submodule "blocks/ajax_marking"]
 	path = blocks/ajax_marking
 	url = git://github.com/mattgibson/moodle-block_ajax_marking.git
+[submodule "blocks/forum_block"]
+	path = blocks/forum_block
+	url = git://github.com/t6nis/moodle2-block_forum_block.git
