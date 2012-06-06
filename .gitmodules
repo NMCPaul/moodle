@@ -22,3 +22,6 @@
 [submodule "blocks/forum_block"]
 	path = blocks/forum_block
 	url = git://github.com/t6nis/moodle2-block_forum_block.git
+[submodule "blocks/userinfo"]
+	path = blocks/userinfo
+	url = git://github.com/fbotti/moodle-block_userinfo.git
