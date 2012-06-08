@@ -25,3 +25,6 @@
 [submodule "blocks/userinfo"]
 	path = blocks/userinfo
 	url = git://github.com/fbotti/moodle-block_userinfo.git
+[submodule "blocks/fn_marking"]
+	path = blocks/fn_marking
+	url = https://github.com/fernandooliveira/moodlefn-marking
