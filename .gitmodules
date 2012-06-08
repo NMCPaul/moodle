@@ -28,3 +28,6 @@
 [submodule "blocks/fn_marking"]
 	path = blocks/fn_marking
 	url = https://github.com/fernandooliveira/moodlefn-marking
+[submodule "local/codechecker"]
+	path = local/codechecker
+	url = git://github.com/moodlehq/moodle-local_codechecker.git
