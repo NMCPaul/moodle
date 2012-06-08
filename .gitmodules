@@ -31,3 +31,6 @@
 [submodule "local/codechecker"]
 	path = local/codechecker
 	url = git://github.com/moodlehq/moodle-local_codechecker.git
+[submodule "admin/tool/editrolesbycap"]
+	path = admin/tool/editrolesbycap
+	url = git://github.com/moodleou/moodle-tool_editrolesbycap.git
