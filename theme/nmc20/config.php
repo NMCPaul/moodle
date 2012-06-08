@@ -67,8 +67,8 @@ $THEME->layouts = array(
         'defaultregion' => 'side-post'
     ),
     'frontpage' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post'),
+        'file' => 'frontpage.php',
+        'regions' => array('side-pre', 'side-post', 'center'),
         'defaultregion' => 'side-post',
         'options' => array('nobreadcrumb' => 'true')
     ),
