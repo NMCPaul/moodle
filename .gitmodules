@@ -37,3 +37,6 @@
 [submodule "local/moodlecheck"]
 	path = local/moodlecheck
 	url = git://github.com/marinaglancy/moodle-local_moodlecheck.git
+[submodule "local/davroot"]
+	path = local/davroot
+	url = git://github.com/scara/moodle-local_davroot.git
