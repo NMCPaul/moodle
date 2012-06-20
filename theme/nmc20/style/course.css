@@ -90,3 +90,8 @@
 .path-course .userinfobox {
   border: 1px solid #E4B150;
 }
+#rolechanged {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
