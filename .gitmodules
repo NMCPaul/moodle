@@ -34,3 +34,6 @@
 [submodule "admin/tool/editrolesbycap"]
 	path = admin/tool/editrolesbycap
 	url = git://github.com/moodleou/moodle-tool_editrolesbycap.git
+[submodule "local/moodlecheck"]
+	path = local/moodlecheck
+	url = git://github.com/marinaglancy/moodle-local_moodlecheck.git
