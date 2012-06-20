@@ -247,7 +247,19 @@ echo $OUTPUT->doctype() ?>
               <div id="region-main-wrap">
                 <div id="region-main">
                   <div class="region-content">
-                    <h2 class="headingblock"><?php echo $PAGE->heading;?></h2>
+                    <h2 class="headingblock">
+                        <?php echo $PAGE->heading;?>
+                    <?php
+                      if( is_role_switched($COURSE->id) ) {
+                        $context = context_course::instance($COURSE->id, MUST_EXIST);
+                        $switchedRoleID = $USER->access['rsw'][$context->path];
+                        $systemcontext = get_context_instance(CONTEXT_SYSTEM);
+                        $roles = get_all_roles();
+                        role_fix_names($roles, $systemcontext, ROLENAME_ORIGINAL);
+                        echo('<div id="rolechanged">ROLE: '.$roles[$switchedRoleID]->localname.'</div>');
+                    }
+                    ?>
+                    </h2>
                     <?php echo $OUTPUT->main_content() ?>
                   </div>
                 </div>
@@ -303,6 +315,5 @@ echo $OUTPUT->doctype() ?>
             YUI().use('node-menunav',function(Y){var menu=Y.one("#top_menu");menu.plug(Y.Plugin.NodeMenuNav, {submenuShowDelay: 500});menu.get("ownerDocument").get("documentElement").removeClass("yui3-loading");});
         }
     </script>
-
   </body>
 </html>
