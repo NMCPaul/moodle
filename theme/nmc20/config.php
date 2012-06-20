@@ -73,7 +73,7 @@ $THEME->layouts = array(
         'options' => array('nobreadcrumb' => 'true')
     ),
     'admin' => array(
-        'file' => 'general.php',
+        'file' => 'admin.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre'
     ),
