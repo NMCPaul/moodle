@@ -1,5 +1,9 @@
 <?php
-
+if (empty($CFG->loginhttps)) {
+    $wwwroot = $CFG->wwwroot;
+} else {
+    $wwwroot = str_replace("http://", "https://", $CFG->wwwroot);
+}
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?> class="yui3-loading">
   <head>
@@ -13,7 +17,7 @@ echo $OUTPUT->doctype() ?>
         <img alt="NMC" src="<?php echo $OUTPUT->pix_url('img-nmclogo', 'theme')?>" />
       </a>
       <div id="top_menu_date">
-        <a href="<?php echo($CFG->wwwroot); ?>/calendar/view.php"><?php /*echo(date('j M Y (l)'));*/ echo(date('F jS, o (D)')); ?></a>
+        <a href="<?php echo($wwwroot); ?>/calendar/view.php"><?php /*echo(date('j M Y (l)'));*/ echo(date('F jS, o (D)')); ?></a>
       </div> 
     </div>
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
@@ -24,31 +28,20 @@ echo $OUTPUT->doctype() ?>
           <div id="page-header" class="clearfix">
             <div id="fading_header">
               <div id="logo">
-                <a href="https://elearn.nmc.edu">NMC eLearning</a>
+                <a href="<?php echo($wwwroot);?>">NMC eLearning</a>
               </div>
               <div class="userinfo">
                 <div class="profilename">
                 <?PHP
                 global $USER, $CFG, $SESSION, $COURSE, $DB, $CATEGORY;
 
-                function get_content () {
-                $wwwroot = '';
-                $signup = '';}
-
-                if (empty($CFG->loginhttps)) {
-                $wwwroot = $CFG->wwwroot;
-                } else {
-                $wwwroot = str_replace("http://", "https://", $CFG->wwwroot);
-                }
-
-
                 if (!isloggedin() or isguestuser()) {
-                echo '<a href="'.$wwwroot.'/login/index.php">'.nmc20_ucwords(get_string('click_to_login', 'theme_nmc20')).'</a>';
+                    echo '<a href="'.$wwwroot.'/login/index.php">'.nmc20_ucwords(get_string('click_to_login', 'theme_nmc20')).'</a>';
                 } else {
                 if(session_is_loggedinas()) {
                   $realuser = session_get_realuser();
                   $fullname = fullname($realuser, true);
-                  $realuserinfo = "[<a class=\"adminonly\" href=\"$CFG->wwwroot/course/loginas.php?id=$USER->realuser&amp;sesskey=".sesskey()."\">$fullname</a>]";
+                  $realuserinfo = "[<a class=\"adminonly\" href=\"$wwwroot/course/loginas.php?id=$USER->realuser&amp;sesskey=".sesskey()."\">$fullname</a>]";
                   echo $realuserinfo.' logged in as [<a href="'.$wwwroot.'/user/view.php?id='.$USER->id.'&amp;course='.$COURSE->id.'">'.$USER->firstname.' '.$USER->lastname.'</a>]';
                 } elseif(is_siteadmin()) {
                   echo '<a title="You are logged in as an admin user" class="adminonly" href="'.$wwwroot.'/user/view.php?id='.$USER->id.'&amp;course='.$COURSE->id.'">'.$USER->firstname.' '.$USER->lastname.'</a>';
@@ -95,8 +88,8 @@ echo $OUTPUT->doctype() ?>
                         <div id="top_menu" class="yui3-menu yui3-menu-horizontal yui3-menubuttonnav">
                             <div class="yui3-menu-content">
                                 <ul class="first-of-type level-1">
-                                    <li class="yui3-menuitem first-element level-1"><a class="yui3-menuitem-content" href="<?php echo($CFG->wwwroot); ?>/">Home</a></li>
-                                    <li class="yui3-menuitem first-element level-1"><a class="yui3-menuitem-content" href="<?php echo($CFG->wwwroot.'/my'); ?>/">My Moodle</a></li>
+                                    <li class="yui3-menuitem first-element level-1"><a class="yui3-menuitem-content" href="<?php echo($wwwroot); ?>/">Home</a></li>
+                                    <li class="yui3-menuitem first-element level-1"><a class="yui3-menuitem-content" href="<?php echo($wwwroot.'/my'); ?>/">My Moodle</a></li>
                                     <li class="level-1">
                                         <a class="yui3-menu-label" href="#quicklinks"><em>Quick Links</em></a>
                                         <div id="quicklinks" class="yui3-menu">

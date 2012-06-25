@@ -29,12 +29,13 @@ if ($showsidepre && !$showsidepost) {
                         <?php echo $PAGE->heading;?>
                     <?php
                       if( is_role_switched($COURSE->id) ) {
-                        $context = context_course::instance($COURSE->id, MUST_EXIST);
-                        $switchedRoleID = $USER->access['rsw'][$context->path];
-                        $systemcontext = get_context_instance(CONTEXT_SYSTEM);
-                        $roles = get_all_roles();
-                        role_fix_names($roles, $systemcontext, ROLENAME_ORIGINAL);
-                        echo('<div id="rolechanged">ROLE: '.$roles[$switchedRoleID]->localname.'</div>');
+                        $rolename = '';
+                        $context = get_context_instance(CONTEXT_COURSE, $COURSE->id);
+                        $role = $DB->get_record('role', array('id'=>$USER->access['rsw'][$context->path]));
+                        $rolename = format_string($role->name);
+                        $loggedinas = get_string('loggedinas', 'moodle', $username).$rolename." (<a href=\"$CFG->wwwroot/course/view.php?id=$course->id&amp;switchrole=0&amp;sesskey=".sesskey()."\">".get_string('switchrolereturn').'</a>)';
+                        echo('<div id="rolechanged">ROLE: '.$rolename.'</div>');
+                        //echo('<div id="rolechanged">ROLE: '.$loggedinas.'</div>');
                     }
                     ?>
                     </h2>
