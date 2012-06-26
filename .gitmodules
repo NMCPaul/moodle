@@ -40,3 +40,6 @@
 [submodule "local/davroot"]
 	path = local/davroot
 	url = git://github.com/scara/moodle-local_davroot.git
+[submodule "report/editdates"]
+	path = report/editdates
+	url = git://github.com/moodleou/moodle-report_editdates.git
