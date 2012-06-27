@@ -43,3 +43,9 @@
 [submodule "report/editdates"]
 	path = report/editdates
 	url = git://github.com/moodleou/moodle-report_editdates.git
+[submodule "mod/slideshow"]
+	path = mod/slideshow
+	url = git://github.com/noparadise/moodle-mod_slideshow.git
+[submodule "blocks/firephp"]
+	path = blocks/firephp
+	url = git://github.com/nakohdo/moodle-block_firephp.git
