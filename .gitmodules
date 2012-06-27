@@ -1,0 +1,45 @@
+[submodule "theme/nmc20"]
+	path = theme/nmc20
+	url = git@github.com:NMCPaul/NMC-Theme.git
+[submodule "blocks/forum_aggregator"]
+	path = blocks/forum_aggregator
+	url = https://github.com/t6nis/moodle-block_forum_aggregator
+[submodule "admin/tool/editrolesbycap"]
+	path = admin/tool/editrolesbycap
+	url = git://github.com/moodleou/moodle-tool_editrolesbycap.git
+[submodule "local/camtasia_relay"]
+	path = local/camtasia_relay
+	url = git://github.com/TechSmith/Moodle-Camtasia_Relay-Plugin.git
+[submodule "local/codechecker"]
+	path = local/codechecker
+	url = git://github.com/moodlehq/moodle-local_codechecker.git
+[submodule "local/moodlecheck"]
+	path = local/moodlecheck
+	url = git://github.com/marinaglancy/moodle-local_moodlecheck.git
+[submodule "blocks/dndupload"]
+	path = blocks/dndupload
+	url = git://github.com/davosmith/moodle-block_dndupload.git
+[submodule "mod/slideshow"]
+	path = mod/slideshow
+	url = git://github.com/noparadise/moodle-mod_slideshow.git
+[submodule "blocks/quickfindlist"]
+	path = blocks/quickfindlist
+	url = git://github.com/marxjohnson/moodle-block_quickfindlist.git
+[submodule "blocks/quickcourselist"]
+	path = blocks/quickcourselist
+	url = git://github.com/marxjohnson/moodle-block_quickcourselist.git
+[submodule "blocks/quickmail"]
+	path = blocks/quickmail
+	url = git://github.com/lsuits/quickmail.git
+[submodule "blocks/ajax_marking"]
+	path = blocks/ajax_marking
+	url = git://github.com/mattgibson/moodle-block_ajax_marking.git
+[submodule "report/editdates"]
+	path = report/editdates
+	url = git://github.com/moodleou/moodle-report_editdates.git
+[submodule "blocks/fn_marking"]
+	path = blocks/fn_marking
+	url = git://github.com/fernandooliveira/moodlefn-marking.git
+[submodule "blocks/userinfo"]
+	path = blocks/userinfo
+	url = git://github.com/fbotti/moodle-block_userinfo.git

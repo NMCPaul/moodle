@@ -26,3 +26,6 @@ CVS
 /.buildpath
 /.cache
 phpunit.xml
+/blocks/jumpto_menu
+/local/globalmessage
+/weekly_update.sh
