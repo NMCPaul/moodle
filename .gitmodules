@@ -21,7 +21,7 @@
 	url = git://github.com/davosmith/moodle-block_dndupload.git
 [submodule "mod/slideshow"]
 	path = mod/slideshow
-	url = git://github.com/noparadise/moodle-mod_slideshow.git
+   url = git@github.com:NMCPaul/moodle-mod_slideshow.git
 [submodule "blocks/quickfindlist"]
 	path = blocks/quickfindlist
 	url = git://github.com/marxjohnson/moodle-block_quickfindlist.git
