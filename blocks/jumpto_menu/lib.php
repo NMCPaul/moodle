@@ -306,7 +306,7 @@
         {
             //Other browser
             $javascript = ' onchange="jumpTo()"';
-        }    
+        }
 
         $output .= '<div>'.$selectlabel.$button.'<select id="'.$formid.'_jump" name="jump"'.$javascript.'>';
 
@@ -339,7 +339,7 @@
 
                 unset($optgr);
                 $optgr = array();
-    
+
                 $optgr[]  = '   <optgroup label="'. s(format_string(substr($label,2))) .'">';   // Plain labels
 
                 $inoptgroup = true; /// everything following will be in an optgroup
@@ -402,4 +402,4 @@
         }
     }
 
-?> 
+?>
