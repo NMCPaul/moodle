@@ -13,9 +13,9 @@
 [submodule "local/codechecker"]
 	path = local/codechecker
 	url = git://github.com/moodlehq/moodle-local_codechecker.git
-[submodule "local/moodlecheck"]
-	path = local/moodlecheck
-	url = git://github.com/marinaglancy/moodle-local_moodlecheck.git
+;[submodule "local/moodlecheck"]
+	;path = local/moodlecheck
+	;url = git://github.com/marinaglancy/moodle-local_moodlecheck.git
 [submodule "blocks/dndupload"]
 	path = blocks/dndupload
 	url = git://github.com/davosmith/moodle-block_dndupload.git
