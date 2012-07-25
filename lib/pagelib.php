@@ -457,7 +457,7 @@ class moodle_page {
                     .'to call require_login() or $PAGE->set_context(). The page may not display '
                     .'correctly as a result');
             }
-            $this->_context = get_context_instance(CONTEXT_SYSTEM);
+            $this->_context = context_system::instance();
         }
         return $this->_context;
     }
@@ -883,7 +883,7 @@ class moodle_page {
         }
 
         if (!$this->_context) {
-            $this->set_context(get_context_instance(CONTEXT_COURSE, $this->_course->id));
+            $this->set_context(context_course::instance($this->_course->id));
         }
     }
 
@@ -897,7 +897,7 @@ class moodle_page {
             // extremely ugly hack which sets context to some value in order to prevent warnings,
             // use only for core error handling!!!!
             if (!$this->_context) {
-                $this->_context = get_context_instance(CONTEXT_SYSTEM);
+                $this->_context = context_system::instance();
             }
             return;
         }
@@ -954,7 +954,7 @@ class moodle_page {
 
         // unfortunately the context setting is a mess, let's try to work around some common block problems and show some debug messages
         if (empty($this->_context) or $this->_context->contextlevel != CONTEXT_BLOCK) {
-            $context = get_context_instance(CONTEXT_MODULE, $cm->id);
+            $context = context_module::instance($cm->id);
             $this->set_context($context);
         }
 
@@ -1117,7 +1117,7 @@ class moodle_page {
         $this->ensure_theme_not_set();
         $this->set_course($SITE);
         $this->load_category($categoryid);
-        $this->set_context(get_context_instance(CONTEXT_COURSECAT, $categoryid));
+        $this->set_context(context_coursecat::instance($categoryid));
     }
 
     /**
