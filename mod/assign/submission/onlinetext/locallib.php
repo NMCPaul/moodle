@@ -201,7 +201,7 @@ class assign_submission_onlinetext extends assign_submission_plugin {
 
         if ($onlinetextsubmission) {
             $text = format_text($onlinetextsubmission->onlinetext, $onlinetextsubmission->onlineformat, array('context'=>$this->assignment->get_context()));
-            $shorttext = shorten_text($text, 500);
+            $shorttext = shorten_text($text, 4000);
             if ($text != $shorttext) {
                 return $shorttext . get_string('numwords', 'assignsubmission_onlinetext', count_words($text));
             } else {
