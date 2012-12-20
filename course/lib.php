@@ -583,7 +583,7 @@ function print_log_csv($course, $user, $date, $order='l.time DESC', $modname,
             $ld = $DB->get_record('log_display', array('module'=>$log->module, 'action'=>$log->action));
             $ldcache[$log->module][$log->action] = $ld;
         }
-        if ($ld && !empty($log->info)) {
+        if ($ld && is_numeric($log->info)) {
             // ugly hack to make sure fullname is shown correctly
             if (($ld->mtable == 'user') and ($ld->field ==  $DB->sql_concat('firstname', "' '" , 'lastname'))) {
                 $log->info = fullname($DB->get_record($ld->mtable, array('id'=>$log->info)), true);
@@ -684,7 +684,7 @@ function print_log_xls($course, $user, $date, $order='l.time DESC', $modname,
             $ld = $DB->get_record('log_display', array('module'=>$log->module, 'action'=>$log->action));
             $ldcache[$log->module][$log->action] = $ld;
         }
-        if ($ld && !empty($log->info)) {
+        if ($ld && is_numeric($log->info)) {
             // ugly hack to make sure fullname is shown correctly
             if (($ld->mtable == 'user') and ($ld->field == $DB->sql_concat('firstname', "' '" , 'lastname'))) {
                 $log->info = fullname($DB->get_record($ld->mtable, array('id'=>$log->info)), true);
@@ -798,7 +798,7 @@ function print_log_ods($course, $user, $date, $order='l.time DESC', $modname,
             $ld = $DB->get_record('log_display', array('module'=>$log->module, 'action'=>$log->action));
             $ldcache[$log->module][$log->action] = $ld;
         }
-        if ($ld && !empty($log->info)) {
+        if ($ld && is_numeric($log->info)) {
             // ugly hack to make sure fullname is shown correctly
             if (($ld->mtable == 'user') and ($ld->field == $DB->sql_concat('firstname', "' '" , 'lastname'))) {
                 $log->info = fullname($DB->get_record($ld->mtable, array('id'=>$log->info)), true);
@@ -1484,15 +1484,16 @@ function print_section($course, $section, $mods, $modnamesused, $absolute=false,
             $modcontext = context_module::instance($mod->id);
             $canviewhidden = has_capability('moodle/course:viewhiddenactivities', $modcontext);
             $accessiblebutdim = false;
+            $conditionalhidden = false;
             if ($canviewhidden) {
                 $accessiblebutdim = !$mod->visible;
                 if (!empty($CFG->enableavailability)) {
-                    $accessiblebutdim = $accessiblebutdim ||
-                        $mod->availablefrom > time() ||
+                    $conditionalhidden = $mod->availablefrom > time() ||
                         ($mod->availableuntil && $mod->availableuntil < time()) ||
                         count($mod->conditionsgrade) > 0 ||
                         count($mod->conditionscompletion) > 0;
                 }
+                $accessiblebutdim = $conditionalhidden || $accessiblebutdim;
             }
 
             $liclasses = array();
@@ -1548,8 +1549,12 @@ function print_section($course, $section, $mods, $modnamesused, $absolute=false,
                 $linkclasses = '';
                 $textclasses = '';
                 if ($accessiblebutdim) {
-                    $linkclasses .= ' dimmed conditionalhidden';
-                    $textclasses .= ' dimmed_text conditionalhidden';
+                    $linkclasses .= ' dimmed';
+                    $textclasses .= ' dimmed_text';
+                    if ($conditionalhidden) {
+                        $linkclasses .= ' conditionalhidden';
+                        $textclasses .= ' conditionalhidden';
+                    }
                     $accesstext = '<span class="accesshide">'.
                         get_string('hiddenfromstudents').': </span>';
                 } else {
@@ -1705,14 +1710,25 @@ function print_section($course, $section, $mods, $modnamesused, $absolute=false,
                         } else {
                             $extraclass = '';
                         }
-                        echo "
-<form class='togglecompletion$extraclass' method='post' action='".$CFG->wwwroot."/course/togglecompletion.php'><div>
-<input type='hidden' name='id' value='{$mod->id}' />
-<input type='hidden' name='modulename' value='".s($mod->name)."' />
-<input type='hidden' name='sesskey' value='".sesskey()."' />
-<input type='hidden' name='completionstate' value='$newstate' />
-<input type='image' src='$imgsrc' alt='$imgalt' title='$imgtitle' />
-</div></form>";
+                        echo html_writer::start_tag('form', array(
+                                'class' => 'togglecompletion' . $extraclass,
+                                'method' => 'post',
+                                'action' => $CFG->wwwroot . '/course/togglecompletion.php'));
+                        echo html_writer::start_tag('div');
+                        echo html_writer::empty_tag('input', array(
+                                'type' => 'hidden', 'name' => 'id', 'value' => $mod->id));
+                        echo html_writer::empty_tag('input', array(
+                                'type' => 'hidden', 'name' => 'modulename',
+                                'value' => $mod->name));
+                        echo html_writer::empty_tag('input', array(
+                                'type' => 'hidden', 'name' => 'sesskey', 'value' => sesskey()));
+                        echo html_writer::empty_tag('input', array(
+                                'type' => 'hidden', 'name' => 'completionstate',
+                                'value' => $newstate));
+                        echo html_writer::empty_tag('input', array(
+                                'type' => 'image', 'src' => $imgsrc, 'alt' => $imgalt, 'title' => $imgtitle));
+                        echo html_writer::end_tag('div');
+                        echo html_writer::end_tag('form');
                     } else {
                         // In auto mode, or when editing, the icon is just an image
                         echo "<span class='autocompletion'>";
@@ -1864,7 +1880,7 @@ function print_section_add_menus($course, $section, $modnames, $vertical=false, 
         // The module chooser link
         $modchooser = html_writer::start_tag('div', array('class' => 'mdl-right'));
         $modchooser.= html_writer::start_tag('div', array('class' => 'section-modchooser'));
-        $icon = $OUTPUT->pix_icon('t/add', $straddeither);
+        $icon = $OUTPUT->pix_icon('t/add', '');
         $span = html_writer::tag('span', $straddeither, array('class' => 'section-modchooser-text'));
         $modchooser .= html_writer::tag('span', $icon . $span, array('class' => 'section-modchooser-link'));
         $modchooser.= html_writer::end_tag('div');
@@ -1916,7 +1932,7 @@ function get_module_metadata($course, $modnames, $sectionreturn = null) {
         if (!course_allowed_module($course, $modname)) {
             continue;
         }
-        if (isset($modlist[$modname])) {
+        if (isset($modlist[$course->id][$modname])) {
             // This module is already cached
             $return[$modname] = $modlist[$course->id][$modname];
             continue;
@@ -4537,6 +4553,7 @@ function include_course_ajax($course, $usedmodules = array(), $enabledmodules = 
         'courseid' => $course->id,
         'pagetype' => $PAGE->pagetype,
         'pagelayout' => $PAGE->pagelayout,
+        'subpage' => $PAGE->subpage,
         'regions' => $PAGE->blocks->get_regions(),
     );
     $PAGE->requires->yui_module('moodle-core-blocks', 'M.core_blocks.init_dragdrop', array($params), null, true);
