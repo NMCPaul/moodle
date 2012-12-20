@@ -30,6 +30,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['parentlanguage'] = 'Chinese';
-$string['thisdirection'] = 'ltr';
-$string['thislanguage'] = '正體中文';
+$string['language'] = 'Teanga';
+$string['next'] = 'Ar aghaidh';
+$string['previous'] = 'Siar';
