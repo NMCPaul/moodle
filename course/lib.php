@@ -2848,7 +2848,7 @@ function add_mod_to_section($mod, $beforemod=NULL) {
         }
 
         $DB->set_field("course_sections", "sequence", $newsequence, array("id"=>$section->id));
-        $DB->set_field("course_modules", "section", $section->id, array("id" => $mod->id));
+        $DB->set_field("course_modules", "section", $section->id, array("id" => $mod->coursemodule));
         return $section->id;     // Return course_sections ID that was used.
 
     } else {  // Insert a new record
@@ -2859,7 +2859,7 @@ function add_mod_to_section($mod, $beforemod=NULL) {
         $section->summaryformat = FORMAT_HTML;
         $section->sequence = $mod->coursemodule;
         $section->id = $DB->insert_record("course_sections", $section);
-        $DB->set_field("course_modules", "section", $section->id, array("id" => $mod->id));
+        $DB->set_field("course_modules", "section", $section->id, array("id" => $mod->coursemodule));
         return $section->id;
     }
 }
@@ -4458,16 +4458,18 @@ class course_request {
  * @param stdClass $currentcontext Current context of block
  */
 function course_page_type_list($pagetype, $parentcontext, $currentcontext) {
-    // if above course context ,display all course fomats
-    list($currentcontext, $course, $cm) = get_context_info_array($currentcontext->id);
-    if ($course->id == SITEID) {
-        return array('*'=>get_string('page-x', 'pagetype'));
-    } else {
-        return array('*'=>get_string('page-x', 'pagetype'),
-            'course-*'=>get_string('page-course-x', 'pagetype'),
-            'course-view-*'=>get_string('page-course-view-x', 'pagetype')
-        );
+    // $currentcontext could be null, get_context_info_array() will throw an error if this is the case.
+    if (isset($currentcontext)) {
+        // if above course context ,display all course fomats
+        list($currentcontext, $course, $cm) = get_context_info_array($currentcontext->id);
+        if ($course->id == SITEID) {
+            return array('*'=>get_string('page-x', 'pagetype'));
+        }
     }
+    return array('*'=>get_string('page-x', 'pagetype'),
+        'course-*'=>get_string('page-course-x', 'pagetype'),
+        'course-view-*'=>get_string('page-course-view-x', 'pagetype')
+    );
 }
 
 /**
