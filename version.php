@@ -38,4 +38,3 @@ $release  = '2.4.3+ (Build: 20130328)';  // Human-friendly version name
 
 $branch   = '24';                       // this version's branch
 $maturity = MATURITY_STABLE;            // this version's maturity level
-$test = 1;
